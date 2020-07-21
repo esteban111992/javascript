@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+	<title>Indice de Masa Corporal</title>
+</head>
+<body style="text-align: center;">
+<h1>Indice de Masa Corporal</h1>
+<!-- Formulario -->
+<p>Ingrese peso: <input type="text" id="kg"></p>
+<p>Ingrese Altura: <input type="text" id="m"></p>
+<button class="button1" id="calc">Calcular</button>
+<p>Indice masa muscular: <span id="imc"></span></p>
+<p>Observaciones: <span id="obser"></span></p>
+
+<!-- Cálculo masa-->
+<script type="text/javascript">
+	calc = document.getElementById("calc");
+	kg = document.getElementById("kg");
+	m = document.getElementById("m");
+	imc = document.getElementById("imc");
+	lectura = document.getElementById("obser");
+
+	calc.onclick = function(){
+		if(kg.value!="" && m.value!=""){
+			imco = (kg.value / (m.value* m.value));
+			imc.innerHTML = imco
+			console.log(imco);
+
+			if(imco<15){ lectura.innerHTML = "Delgadez muy severa"; }
+			else if(imco>=15.1 && imco<=15.9){ lectura.innerHTML = "Delgadez severa"; }
+            else if(imco>=16 && imco<=18.4){ lectura.innerHTML = "Delgadez"; }
+            else if(imco>=18.5 && imco<=24.9){ lectura.innerHTML = "Peso saludable"; }
+            else if(imco>=25 && imco<=29.9){ lectura.innerHTML = "Sobrepeso"; }
+            else if(imco>=30 && imco<=34.9){ lectura.innerHTML = "Obesidad Moderada"; }
+			else if(imco>30){ lectura.innerHTML = "Obesidad"; }
+
+		}else{
+			alert("Debes ingresar peso y altura.")
+		}
+
+	};
+</script>
+</body>
+</html>
