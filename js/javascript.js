@@ -1,3 +1,31 @@
+var bank = {
+  holder: 'Alex',
+  balance: 0,
+
+  ingresar: function(valor){
+    console.log("Ingresaste " + valor + " pesos");
+    this.balance= this.balance + valor;
+  }, 
+
+  extraer: function (valor){
+    console.log ("Extraiste " + valor + " pesos");
+    this.balance = this.balance - valor;
+  },
+  informar: function(){
+    return "Nombre: " + this.holder + " Tu saldo es  " + this.balance;
+  }
+};
+
+console.log(bank.holder);
+console.log(bank.balance);
+console.log('------------');
+console.log(bank.ingresar(80));
+console.log(bank.extraer (20));
+console.log(bank.informar()); 
+
+
+console.log('------------');
+console.log('------------');
 let number = prompt ('introduzca un número')
 
 for (number = 0; number <= 10; number++) {
@@ -7,6 +35,9 @@ for (number = 0; number <= 10; number++) {
     console.log(number + " es impar.");
   }
 }
+
+console.log('------------');
+console.log('------------');
 
   /* Tabla Multiplicar 9 */
 
@@ -23,3 +54,7 @@ for (number = 0; number <= 10; number++) {
     i++
 
   }
+
+  
+  
+  
